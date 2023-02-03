@@ -10,10 +10,8 @@ import useToken from './components/hooks/useToken';
 
 
 const App = () => {
-  const  { token, setToken, deleteToken } = useToken();
+  const  { token, setToken } = useToken();
   const [merchants, setMerchants] = useState([]);
-  const [loginSuccess, setLoginSuccess] = useState('NOT SUCESS');
-  const [loginError, setLoginError] = useState('');
 
   useEffect(() => {
     getQuestions();
@@ -86,13 +84,15 @@ const App = () => {
   //   setLoginSuccess(true);
   // }
 
+  console.log(token, "token?")
+
   if (!token) {
     console.log(token, "ja")
     return <Login setToken={setToken} />;
   }
   return (
     <div className="wrapper">
-      <h1>Application {loginError}</h1>
+      <h1>Application</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
