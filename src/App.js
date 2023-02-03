@@ -84,10 +84,8 @@ const App = () => {
   //   setLoginSuccess(true);
   // }
 
-  console.log(token, "token?")
 
   if (!token) {
-    console.log(token, "ja")
     return <Login setToken={setToken} />;
   }
   return (

@@ -15,12 +15,9 @@ const useToken = () => {
       return;
     }
     localStorage.setItem("token", JSON.stringify(userToken));
-    console.log(typeof(userToken), "yolo")
     setToken(userToken);
-    console.log(token, "hallo")
   };
 
-  console.log(token, "in useToken.js")
 
   return{
     setToken: saveToken,
