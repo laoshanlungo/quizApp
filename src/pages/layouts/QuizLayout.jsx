@@ -27,15 +27,13 @@ const QuizLayout = ({data}) => {
   }
 
   return (
-    <div class="container">
-    <div className="d-flex flex-column align-items-center justify-content-around">
-    <div className="d-flex flex-row d-flex justify-content-around col-md-auto">
-      <div className="d-flex flex-column align-items-center justify-content-around">
+    <div className="container-fluid" style={{height: "800px"}}>
+    <div className="h-75 d-flex flex-row d-flex justify-content-around col-md-auto">
+      <div className="h-100 col-sm align-items-center justify-content-around">
       <BuildQuestionCard data={data}/>
       </div>
     </div>
-    <BuildPictureCard picture={mauritius} />
-    </div>
+    <BuildPictureCard className="h-25" picture={mauritius} />
     </div>
   );
 };
