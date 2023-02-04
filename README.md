@@ -2,6 +2,22 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Setting up DB
+
+Create database 'davidmichel', create user my_user with password root;
+
+then run the following commands in psql:
+
+'CREATE TABLE questions (id serial primary key, question varchar(255), answers varchar[], solve varchar);
+
+CREATE TABLE "users" ("id" SERIAL PRIMARY KEY, "name" text NOT NULL, "emaiL" text NOT NULL UNIQUE, "phonenumber" text NOT NULL UNIQUE, "password" varchar NOT NULL, );
+
+GRANT USAGE ON SEQUENCE questions_id_seq TO my_user;
+
+GRANT USAGE ON SEQUENCE users_id_seq TO my_user;
+
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO my_user;'
+
 ## Available Scripts
 
 In the project directory, you can run:
