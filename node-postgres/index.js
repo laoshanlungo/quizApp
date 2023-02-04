@@ -64,6 +64,21 @@ app.post("/login", async (req, res) => {
   }
 });
 
+app.post("/signup", async (req, res) => {
+  const {credentials} = req.body;
+  const test = await login_model.signupUser(credentials);
+  switch (test) {
+    case "userAlreadyExists":
+      res.status(200).send('1');
+      break;
+    case "success":
+      res.status(200).send(true);
+      break;
+    default:
+      res.status(200).send(false);
+  }
+});
+
 app.listen(port, () => {
   console.log(`App running on port ${port}.`);
 });
