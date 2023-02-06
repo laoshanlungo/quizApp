@@ -3,19 +3,26 @@ import Card from "react-bootstrap/Card";
 import { useState } from "react";
 import '../styles.css';
 import mauritius from '../static/mauritius.png';
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
-const QuestionCard = ({ question, answers, solve, picture }) => {
+const QuestionCard = ({ question, answers, solve, picture, updateGame, score }) => {
   const [answer, setAnswer] = useState(null);
+  const [fieldsDisabled, setFieldsDisabled] = useState(false);
 
   const handleAnswer = (index) => {
     setAnswer(index === solve ? 'Correct!' : 'Nope, try again');
+    setFieldsDisabled(true);
+    setTimeout(() => {
+      updateGame(index === solve)
+      setFieldsDisabled(false);
+    }, 3000);
   };
 
-  const AnswerField = (input) => {
+  const AnswerField = (input, disabled) => {
     const { index } = input;
     return (
       <div className="col-2 flex-fill answers-row">
-          <Button className="button-19 w-100 answers-row" onClick={() => handleAnswer(index)} variant="primary">
+          <Button disabled={fieldsDisabled} className="button-19 w-100 answers-row" onClick={() => handleAnswer(index)} variant="primary">
             {answers[index]}
           </Button>
         </div>
@@ -33,12 +40,12 @@ const QuestionCard = ({ question, answers, solve, picture }) => {
         </Card>
       </div>
       <div className="mh-33 d-flex flex-row flex-fill justify-content-center">
-        <AnswerField index="0" />
-        <AnswerField index="1" />
+        <AnswerField index="0" disabled={fieldsDisabled} />
+        <AnswerField index="1" disabled={fieldsDisabled} />
       </div>
       <div className="h-33 d-flex flex-row flex-fill justify-content-center answers-row">
-        <AnswerField index="2" />
-        <AnswerField index="3" />
+      <AnswerField index="2" disabled={fieldsDisabled} />
+      <AnswerField index="3" disabled={fieldsDisabled} />
       </div>
       <div className="h-1 d-flex flex-row">
         <Card className="align-items-center" style={{ width: "36rem" }}>

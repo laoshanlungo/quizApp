@@ -1,16 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
 import QuizLayout from "./pages/layouts/QuizLayout";
+import GameRound from './components/Game/GameRound';
 import React, { useState, useEffect } from "react";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Preferences from "./components/Preferences/Preferences";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Login from "./components/Login/Login";
-import useToken from './components/hooks/useToken';
-
+import useToken from "./components/hooks/useToken";
 
 const App = () => {
-  const  { token, setToken } = useToken();
+  const { token, setToken } = useToken();
   const [merchants, setMerchants] = useState([]);
 
   useEffect(() => {
@@ -61,10 +61,9 @@ const App = () => {
       });
   }
 
-  const logout = async() => {
+  const logout = async () => {
     await setToken(null);
-  }
-
+  };
 
   // TODO: use logic from here to build Error on Login if password wrong / user don't exist
   // const checkLogin = async() => {
@@ -84,27 +83,29 @@ const App = () => {
   //   setLoginSuccess(true);
   // }
 
-
   if (!token) {
     return <Login setToken={setToken} />;
   }
   return (
     <div className="wrapper">
       <h1>Application</h1>
+      <br />
+      <button className="button-19" onClick={logout}>Logout User</button>
+      <br />
+      <button className="button-19" onClick={createQuestion}>Add Question</button>
+      <br />
+      <button className="button-19" onClick={deleteQuestion}>Delete Question by ID</button>
+      <br />
+      {console.log(merchants, "merchants")}
       <BrowserRouter>
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/preferences" element={<Preferences />} />
-        </Routes>
+          <Route path="/questions" element={<QuizLayout data={merchants} />} />
+                    <Route path="/play" element={<GameRound questions={merchants} />} />
+
+      </Routes>
       </BrowserRouter>
-      <br />
-      <button onClick={logout}>logout</button>
-      <br />
-      <button onClick={createQuestion}>Add merchant</button>
-      <br />
-      <button onClick={deleteQuestion}>Delete merchant</button>
-      
-      <QuizLayout data={merchants} />
     </div>
   );
 };
