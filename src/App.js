@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import QuizLayout from "./pages/layouts/QuizLayout";
-import GameRound from './components/Game/GameRound';
+import GameRound from "./components/Game/GameRound";
 import React, { useState, useEffect } from "react";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Preferences from "./components/Preferences/Preferences";
@@ -37,7 +37,7 @@ const App = () => {
       body: JSON.stringify({ question, answers, solve }),
     })
       .catch((error) => {
-        console.log("fetch error:", error);
+        return error;
       })
       .then((response) => {
         return response.text();
@@ -90,21 +90,25 @@ const App = () => {
     <div className="wrapper">
       <h1>Application</h1>
       <br />
-      <button className="button-19" onClick={logout}>Logout User</button>
+      <button className="button-19" onClick={logout}>
+        Logout User
+      </button>
       <br />
-      <button className="button-19" onClick={createQuestion}>Add Question</button>
+      <button className="button-19" onClick={createQuestion}>
+        Add Question
+      </button>
       <br />
-      <button className="button-19" onClick={deleteQuestion}>Delete Question by ID</button>
+      <button className="button-19" onClick={deleteQuestion}>
+        Delete Question by ID
+      </button>
       <br />
-      {console.log(merchants, "merchants")}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/preferences" element={<Preferences />} />
           <Route path="/questions" element={<QuizLayout data={merchants} />} />
-                    <Route path="/play" element={<GameRound questions={merchants} />} />
-
-      </Routes>
+          <Route path="/play" element={<GameRound questions={merchants} />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );

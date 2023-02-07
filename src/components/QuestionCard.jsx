@@ -15,7 +15,7 @@ const QuestionCard = ({ question, answers, solve, picture, updateGame, score }) 
     setTimeout(() => {
       updateGame(index === solve)
       setFieldsDisabled(false);
-    }, 3000);
+    }, 500);
   };
 
   const AnswerField = (input, disabled) => {
@@ -35,7 +35,7 @@ const QuestionCard = ({ question, answers, solve, picture, updateGame, score }) 
       <div className="mh-33 d-flex flex-row flex-fill justify-content-center">
         <Card className="flex-fill" >
           <Card.Body>
-            <h5 class="card-title text-center">{question}</h5>
+            <h5 className="card-title text-center">{question}</h5>
           </Card.Body>
         </Card>
       </div>
@@ -50,7 +50,7 @@ const QuestionCard = ({ question, answers, solve, picture, updateGame, score }) 
       <div className="h-1 d-flex flex-row">
         <Card className="align-items-center" style={{ width: "36rem" }}>
           <Card.Body>
-            <h5 class="card-title">{answer}</h5>
+            <h5 className="card-title">{answer}</h5>
           </Card.Body>
         </Card>
       </div>

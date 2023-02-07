@@ -33,7 +33,6 @@ const signupUser = async (credentials, res) => {
       signupEmail,
     ]);
     const user = data.rows;
-    console.log(user, "userInModel");
     if (user.length !== 0) {
       return 'userAlreadyExists';
     } else {

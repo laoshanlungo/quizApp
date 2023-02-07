@@ -1,40 +1,89 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navigate, Link } from "react-router-dom";
 import { QuizLayout } from "../../pages/layouts/QuizLayout";
-import  mauritius  from '../../static/mauritius.png';
-import QuestionCard from '../QuestionCard';
+import mauritius from "../../static/mauritius.png";
+import QuestionCard from "../QuestionCard";
 
-
-const GameRound = ({questions}) => {
-  const numberOfQuestionsPerRound = 2;
-  const [score, setScore] = useState(1);
+const GameRound = () => {
+  const numberOfQuestionsPerRound = 10;
+  const [questions, setQuestions] = useState([]);
+  const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const userString = localStorage.getItem("token");
 
-  const updateGame = (raiseScore) => {
-    if(raiseScore){
-        setCurrentQuestion(currentQuestion +1);
-        setScore(score+1)
-        return;
+  useEffect(() => {
+    getQuestions();
+  }, []);
+
+  const getQuestions = async () => {
+    const res = await fetch("http://localhost:3001");
+    const data = await res.json();
+    setQuestions(data);
+    setLoading(false);
+  };
+
+  const persistScore = async () => {
+    const test = "test";
+    try {
+      const res = await fetch("http://localhost:3001/setScore", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ numberOfQuestionsPerRound, score, userString }),
+      });
+    } catch (error) {
+      return error;
     }
-    setCurrentQuestion(currentQuestion +1);
-  }
+  };
+
+  const updateGame = async (raiseScore) => {
+    if (currentQuestion > numberOfQuestionsPerRound - 2) {
+        await persistScore()
+      }
+    setCurrentQuestion(currentQuestion + 1);
+    if (raiseScore) {
+      if (currentQuestion > numberOfQuestionsPerRound - 1) {
+        await persistScore()
+      }
+      setScore(score + 1);
+      return;
+    }
+  };
 
   const handleQuestionSubmit = () => {
     setCurrentQuestion(currentQuestion + 1);
     return null;
   };
+
+  if (loading) {
+    return null;
+  }
   return (
     <div>
-      {currentQuestion > numberOfQuestionsPerRound - 1 && (
+      {currentQuestion > numberOfQuestionsPerRound -1 && (
         <Navigate to="/" replace={true} />
       )}
-      <QuestionCard question={questions[currentQuestion].question} answers={questions[currentQuestion].answers} solve={questions[currentQuestion].solve} picture={mauritius} updateGame={updateGame} score={score} />
+      <Link to="/">
+        <button className="button-19">Back</button>
+      </Link>
+      <QuestionCard
+        question={questions[currentQuestion].question}
+        answers={questions[currentQuestion].answers}
+        solve={questions[currentQuestion].solve}
+        picture={mauritius}
+        updateGame={updateGame}
+        score={score}
+      />
       <button className="button-19" onClick={handleQuestionSubmit}>
         Questions
       </button>
+      {/* <button className="button-19" onClick={persistScore}>
+        Persist Score
+      </button> */}
       <p>{currentQuestion + " is the number of the currentQuestion "}</p>
       <p>{score + " is the number of correct questions "}</p>
-
     </div>
   );
 };
