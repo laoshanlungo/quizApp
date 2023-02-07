@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Navigate, Link } from "react-router-dom";
-import { QuizLayout } from "../../pages/layouts/QuizLayout";
 import mauritius from "../../static/mauritius.png";
 import QuestionCard from "../QuestionCard";
 
@@ -24,7 +23,6 @@ const GameRound = () => {
   };
 
   const persistScore = async () => {
-    const test = "test";
     try {
       const res = await fetch("http://localhost:3001/setScore", {
         method: "POST",

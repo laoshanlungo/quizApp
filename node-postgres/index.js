@@ -95,7 +95,6 @@ app.post("/setScore", async (req, res) => {
   const { numberOfQuestionsPerRound, score, userString } = input;
 
   const updatedUserString = userString.replace(/^"(.*)"$/, "$1");
-  console.log(updatedUserString, "yolo")
   const test = await score_model
     .setScore({numberOfQuestionsPerRound, score, updatedUserString})
     .then((response) => {

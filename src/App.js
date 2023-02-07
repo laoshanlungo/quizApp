@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 import QuizLayout from "./pages/layouts/QuizLayout";
 import GameRound from "./components/Game/GameRound";
 import React, { useState, useEffect } from "react";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Preferences from "./components/Preferences/Preferences";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Login/Login";
 import useToken from "./components/hooks/useToken";
 
@@ -64,24 +63,6 @@ const App = () => {
   const logout = async () => {
     await setToken(null);
   };
-
-  // TODO: use logic from here to build Error on Login if password wrong / user don't exist
-  // const checkLogin = async() => {
-  //   const test = 'test';
-  //   const res = await fetch("http://localhost:3001/login", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ test }),
-  //   })
-  //   const data = await res.json();
-  //   if(!res){
-  //     setLoginError(res === '1' ? 'No User with email found' : 'Wrong password');
-  //     return;
-  //   }
-  //   setLoginSuccess(true);
-  // }
 
   if (!token) {
     return <Login setToken={setToken} />;

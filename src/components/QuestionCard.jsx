@@ -2,8 +2,6 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useState } from "react";
 import '../styles.css';
-import mauritius from '../static/mauritius.png';
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 const QuestionCard = ({ question, answers, solve, picture, updateGame, score }) => {
   const [answer, setAnswer] = useState(null);

@@ -1,5 +1,4 @@
 const Pool = require("pg").Pool;
-const bcrypt = require("bcrypt");
 const pool = new Pool({
   user: "my_user",
   host: "localhost",
