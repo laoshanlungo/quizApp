@@ -66,12 +66,12 @@ const GameRound = () => {
   if(currentQuestion > numberOfQuestionsPerRound -1){
     return(
         <div>
-            <p>You have scored {score} out of {numberOfQuestionsPerRound} questions correct. Good job!</p>
+            <p>You have scored {score} out of {numberOfQuestionsPerRound} questions correct. Good job! Your score has been added to your statistics!</p>
             <Link to="/">
         <button className="button-19">Back</button>
       </Link>
             <button className="button-19" onClick={restartRound}>
-              Restart
+              Try Another Round!
             </button>
         </div>
 
