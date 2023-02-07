@@ -79,9 +79,15 @@ const GameRound = () => {
   }
   return (
     <div>
-      <Link to="/">
-        <button className="button-19">Back</button>
-      </Link>
+              <div className="d-flex flex-row justify-content-start">
+          <Link to="/">
+            <button className="button-back">Back</button>
+          </Link>
+          <h1 className="text-center offset-md-3">Quiz Round of 10 Questions</h1>
+        </div>
+        <br />
+        <br />
+        <br />
       <QuestionCard
         question={questions[currentQuestion].question}
         answers={questions[currentQuestion].answers}

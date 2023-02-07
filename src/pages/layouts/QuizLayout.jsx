@@ -76,8 +76,15 @@ const QuestionsPage = ({data}) => {
 
   return (
     <div>
-            <h1>Here you can delete, add and view all questions</h1>
-          <Link to='/'><button className="button-19">Back to start</button></Link>
+                 <div className="d-flex flex-row justify-content-start">
+          <Link to="/">
+            <button className="button-back">Back</button>
+          </Link>
+          <h1 className="text-center offset-md-3">Add, Delete and check questions</h1>
+        </div>
+        <br />
+        <br />
+        <br />
             <button className="button-19" onClick={createQuestion}>
         Add Question
       </button>

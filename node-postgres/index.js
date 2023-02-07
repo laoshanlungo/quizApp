@@ -118,7 +118,6 @@ app.post("/statistics", async (req, res) => {
   await statistics_model
     .getStatistics({updatedUserString})
     .then((response) => {
-      console.log(response, "response")
       res.status(200).send(response);
     })
     .catch((error) => {

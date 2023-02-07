@@ -26,6 +26,16 @@ const Statistics = () => {
     statistics?.length && statistics.map((stat) => scores.push(stat.score));
   });
 
+  const ResultsList = () =>{
+    return statistics.data.map((entry) => {
+        return (
+            <div>
+            <p>ID of Score: {entry.id}, Number of questions in round: {entry.count}, Number of correct questions: {entry.score}</p>
+            </div>
+        )
+    }) 
+  }
+
   if (loading) {
     return <div>LOADING</div>;
   }
@@ -33,18 +43,23 @@ const Statistics = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="d-flex flex-row justify-content-start">
+        <div className="d-flex flex-row">
           <Link to="/">
-            <button className="button-19">Back</button>
+            <button className="button-back">Back</button>
           </Link>
-          <h1 className="text-center offset-md-4">Your Statistics</h1>
+          <h1 className="text-center offset-md-3">Your Statistics</h1>
         </div>
         <div className="d-flex flex-column">
           <div className="d-flex flex-row justify-content-center">
-            <p>Games played: {statistics.recordsCount}</p>
+            <h3>Games played: {statistics.recordsCount}</h3>
           </div>{" "}
           <div className="d-flex flex-row justify-content-center">
-            <p>Average Score: {statistics.finalAverage}</p>
+            <h4>Average Score: {statistics.finalAverage}</h4>
+          </div>
+          <div className="d-flex flex-row justify-content-center">
+          <div className="d-flex flex-column justify-content-center">
+            <ResultsList />
+          </div>
           </div>
         </div>
       </div>
