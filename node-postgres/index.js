@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.port || 3001;
+
 const Pool = require("pg").Pool;
 const bcrypt = require("bcrypt");
 const pool = new Pool({
@@ -15,6 +16,7 @@ const pool = new Pool({
 const login_model = require("./login_model");
 const question_model = require("./question_model");
 const score_model = require("./score_model");
+const statistics_model = require("./statistics_model");
 
 app.use(express.json());
 app.use(function (req, res, next) {
@@ -98,6 +100,25 @@ app.post("/setScore", async (req, res) => {
   const test = await score_model
     .setScore({numberOfQuestionsPerRound, score, updatedUserString})
     .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+
+app.post("/statistics", async (req, res) => {
+  const input  = req.body;
+  const { userString } = input;
+
+  const updatedUserString = userString.replace(/^"(.*)"$/, "$1");
+
+
+  await statistics_model
+    .getStatistics({updatedUserString})
+    .then((response) => {
+      console.log(response, "response")
       res.status(200).send(response);
     })
     .catch((error) => {

@@ -22,6 +22,11 @@ const GameRound = () => {
     setLoading(false);
   };
 
+  const restartRound = () => {
+    setScore(0);
+    setCurrentQuestion(0);
+  }
+
   const persistScore = async () => {
     try {
       const res = await fetch("http://localhost:3001/setScore", {
@@ -58,11 +63,22 @@ const GameRound = () => {
   if (loading) {
     return null;
   }
+  if(currentQuestion > numberOfQuestionsPerRound -1){
+    return(
+        <div>
+            <p>You have scored {score} out of {numberOfQuestionsPerRound} questions correct. Good job!</p>
+            <Link to="/">
+        <button className="button-19">Back</button>
+      </Link>
+            <button className="button-19" onClick={restartRound}>
+              Restart
+            </button>
+        </div>
+
+    )
+  }
   return (
     <div>
-      {currentQuestion > numberOfQuestionsPerRound -1 && (
-        <Navigate to="/" replace={true} />
-      )}
       <Link to="/">
         <button className="button-19">Back</button>
       </Link>
