@@ -152,7 +152,6 @@ const QuestionsPage = ({ data }) => {
           <div className="d-flex flex-column">
 
           <div className="h-100 col-sm align-items-center justify-content-around">
-            {console.log(data, "daten in questionspage")}
             <QuestionList data={data} />
           </div>
           </div>
