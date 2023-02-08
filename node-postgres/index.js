@@ -125,6 +125,17 @@ app.post("/statistics", async (req, res) => {
     });
 });
 
+app.get("/highscores", async (req, res) => {
+    await await score_model.getHighScores()
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+}
+)
+
 app.listen(port, () => {
   console.log(`App running on port ${port}.`);
 });

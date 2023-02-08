@@ -21,6 +21,9 @@ const Dashboard = () => {
       <Link to="/statistics">
         <button className="button-19">Statistics</button>
       </Link>
+      <Link to="/highscores">
+        <button className="button-19">Highscores</button>
+      </Link>
     </div>
     </div>
   );

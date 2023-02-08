@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Statistics from "./components/Statistics/Statistics";
 import Preferences from "./components/Preferences/Preferences";
+import Highscores from "./components/Statistics/Highscores";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Login/Login";
 import useToken from "./components/hooks/useToken";
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/questions" element={<QuestionsPage data={merchants} />} />
           <Route path="/play" element={<GameRound questions={merchants} />} />
           <Route path="/statistics" element={<Statistics />} />
+                    <Route path="/highscores" element={<Highscores />} />
         </Routes>
       </BrowserRouter>
     </div>

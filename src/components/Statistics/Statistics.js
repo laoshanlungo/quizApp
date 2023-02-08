@@ -22,9 +22,7 @@ const Statistics = () => {
     setStatistics(data);
     setLoading(false);
   };
-  useEffect(() => {
-    statistics?.length && statistics.map((stat) => scores.push(stat.score));
-  });
+
 
   const ResultsList = () =>{
     return statistics.data.map((entry) => {

@@ -31,6 +31,12 @@ const setScore = async (input, res) => {
   }
 };
 
+const getHighScores = async () => {
+    const data = await pool.query(`SELECT * FROM scores_view;`);
+    let highscores = data.rows;
+    return highscores;
+}
 module.exports = {
   setScore,
+  getHighScores
 };
