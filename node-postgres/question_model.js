@@ -19,8 +19,17 @@ const getQuestions = () => {
   }
   const createQuestion = (body) => {
     return new Promise(function(resolve, reject) {
-      const { question, answers, solve } = body
-      pool.query('INSERT INTO questions (question, answers, solve) VALUES ($1, $2, $3) RETURNING *', [question, answers, solve], (error, results) => {
+      const { question, answers, solve, multiplechoice } = body
+      if(multiplechoice === false){
+        pool.query('INSERT INTO questions (question, solve, multiplechoice) VALUES ($1, $2, $3) RETURNING *', [question, solve, multiplechoice], (error, results) => {
+          if (error) {
+            reject(error)
+          }
+          resolve(`A new question has been added added: ${results.rows[0]}`)
+        })
+        return;
+      }
+      pool.query('INSERT INTO questions (question, answers, solve, multiplechoice) VALUES ($1, $2, $3, $4) RETURNING *', [question, answers, solve, multiplechoice], (error, results) => {
         if (error) {
           reject(error)
         }

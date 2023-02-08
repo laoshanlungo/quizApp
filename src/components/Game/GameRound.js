@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navigate, Link } from "react-router-dom";
 import mauritius from "../../static/mauritius.png";
-import QuestionCard from "../QuestionCard";
+import {QuestionCard} from "../QuestionCards";
 
 const GameRound = () => {
   const numberOfQuestionsPerRound = 10;

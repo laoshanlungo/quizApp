@@ -1,5 +1,5 @@
 import "./App.css";
-import QuestionsPage from "./pages/layouts/QuizLayout";
+import QuestionsPage from "./pages/layouts/QuestionsPage";
 import GameRound from "./components/Game/GameRound";
 import React, { useState, useEffect } from "react";
 import Dashboard from "./components/Dashboard/Dashboard";

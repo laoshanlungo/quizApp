@@ -3,7 +3,31 @@ import Card from "react-bootstrap/Card";
 import { useState } from "react";
 import '../styles.css';
 
-const QuestionCard = ({ question, answers, solve, picture, updateGame, score }) => {
+const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
+  const [answer, setAnswer] = useState(null);
+  const [fieldsDisabled, setFieldsDisabled] = useState(false);
+
+  return (
+    <div className="h-50 d-flex flex-column">
+      <div className="mh-33 d-flex flex-row flex-fill justify-content-center">
+        <Card className="flex-fill" >
+          <Card.Body>
+            <h5 className="card-title text-center">{question}</h5>
+          </Card.Body>
+        </Card>
+      </div>
+      <div className="h-1 d-flex flex-row">
+        <Card className="align-items-center" style={{ width: "36rem" }}>
+          <Card.Body>
+            <h5 className="card-title">{solve}</h5>
+          </Card.Body>
+        </Card>
+      </div>
+    </div>
+  );
+}
+
+const MultipleChoiceQuestionCard = ({ question, solve, answers, picture, updateGame, score }) => {
   const [answer, setAnswer] = useState(null);
   const [fieldsDisabled, setFieldsDisabled] = useState(false);
 
@@ -56,4 +80,4 @@ const QuestionCard = ({ question, answers, solve, picture, updateGame, score }) 
   );
 };
 
-export default QuestionCard;
+export {QuestionCard, MultipleChoiceQuestionCard} ;
