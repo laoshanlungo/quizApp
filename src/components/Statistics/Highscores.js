@@ -38,6 +38,7 @@ const Highscore = () => {
     <tr>
       <th scope="col">Place</th>
       <th scope="col">Email</th>
+      <th scope="col">Rounds Played</th>
       <th scope="col">Avg. Score</th>
     </tr>
   </thead>
@@ -49,8 +50,10 @@ const Highscore = () => {
               <th scope="col">
              {row.email}
               </th>
+              <th>
+                {row.cadada}</th>
               <th scope="col">
-                <p>{Math.round(row.avg*100)/100*10}/10</p>
+                <p>{Math.round(row.avg*100)/10}/10</p>
               </th>
 
             </tr>

@@ -74,6 +74,8 @@ const QuestionsPage = ({ data }) => {
     setQuestions(data);
   };
 
+
+  //TO DO: add category field to dialog & to database, make playing categories possible
   function createQuestion() {
     const question = formData.question;
     const answers = [
