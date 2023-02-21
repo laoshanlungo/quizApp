@@ -48,8 +48,10 @@ const App = () => {
           <Route path="/questions" element={<QuestionsPage data={merchants} />} />
           <Route path="/play" element={<GameRound questions={merchants} />} />
           <Route path="/statistics" element={<Statistics />} />
-                    <Route path="/highscores" element={<Highscores />} />
+          <Route path="/highscores" element={<Highscores />} />
         </Routes>
+        <Dashboard />
+
       </BrowserRouter>
     </div>
   );
