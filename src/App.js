@@ -6,7 +6,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Statistics from "./components/Statistics/Statistics";
 import Preferences from "./components/Preferences/Preferences";
 import Highscores from "./components/Statistics/Highscores";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Login from "./components/Login/Login";
 import useToken from "./components/hooks/useToken";
 import questions from "./static/questions.json";
@@ -21,6 +21,7 @@ const App = () => {
   const getQuestions = async () => {
     // const res = await fetch("http://localhost:3001");
     // const data = await res.json();
+    console.log("yolo")
     setMerchants(questions);
   };
 
@@ -34,24 +35,32 @@ const App = () => {
   // }
   return (
     <div className="wrapper">
-      {console.log(merchants, "MERCHANTS")}
             <div className="d-flex flex-row justify-content-between">
       <h1>Grundschule Fensterplatz</h1>
-      <button className="button-logout" onClick={logout}>
+      <button className="button-logout" disabled={true} onClick={logout}>
         Logout User
       </button></div>
       <br />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard />}/>
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/preferences" element={<Preferences />} />
           <Route path="/questions" element={<QuestionsPage data={merchants} />} />
           <Route path="/play" element={<GameRound questions={merchants} />} />
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/highscores" element={<Highscores />} />
         </Routes>
-        <Dashboard />
+        <div className="container">
+    <div className="row">
+    <div className="col align-self-center">
+           <h1 className="text-center">Willkommen</h1>
+            </div>
 
+      <Link to="/dashboard">
+        <button className="button-19">Dashboard</button>
+      </Link>
+    </div>
+    </div>
       </BrowserRouter>
     </div>
   );

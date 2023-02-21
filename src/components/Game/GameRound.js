@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Navigate, Link } from "react-router-dom";
 import mauritius from "../../static/mauritius.png";
 import { MultipleChoiceQuestionCard, QuestionCard } from "../QuestionCards";
+import questionFile from '../../static/questions.json';
 
 const GameRound = () => {
-  const numberOfQuestionsPerRound = 4;
+  const numberOfQuestionsPerRound = 10 < questionFile.length ? 10 : questionFile.length;
   const [questions, setQuestions] = useState([]);
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -16,9 +17,7 @@ const GameRound = () => {
   }, []);
 
   const getQuestions = async () => {
-    const res = await fetch("http://localhost:3001");
-    const data = await res.json();
-    setQuestions(data);
+    setQuestions(questionFile);
     setLoading(false);
   };
 
@@ -54,6 +53,8 @@ const GameRound = () => {
       return;
     }
   };
+
+  console.log(questions, "HALLO")
 
   if (loading) {
     return null;

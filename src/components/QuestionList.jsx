@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MdClear } from "react-icons/md";
 import { Button } from 'react-bootstrap';
+import questions from '../static/questions.json';
 
 const QuestionList = () => {
   const [questions, setQuestions] = useState();
@@ -25,9 +26,9 @@ const QuestionList = () => {
   }
 
   const getQuestions = async () => {
-    const res = await fetch("http://localhost:3001");
-    const data = await res.json();
-    setQuestions(data);
+    // const res = await fetch("http://localhost:3001");
+    // const data = await res.json();
+    setQuestions(questions);
     setLoading(false);
   };
 
