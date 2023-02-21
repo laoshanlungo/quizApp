@@ -44,24 +44,14 @@ const App = () => {
       <br />
       <BrowserRouter>
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/quizApp" element={<Dashboard />} />
           <Route path="/preferences" element={<Preferences />} />
           <Route path="/questions" element={<QuestionsPage data={merchants} />} />
           <Route path="/play" element={<GameRound questions={merchants} />} />
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/highscores" element={<Highscores />} />
         </Routes>
-        <div className="container">
-    <div className="row">
-    <div className="col align-self-center">
-           <h1 className="text-center">Willkommen</h1>
-            </div>
-
-      <Link to="/dashboard">
-        <button className="button-19">Dashboard</button>
-      </Link>
-    </div>
-    </div>
       </BrowserRouter>
     </Container>
   );
