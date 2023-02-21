@@ -1,13 +1,84 @@
-[{
-    "question":"What is 1?",
-    "answers":["1","2","3","4"],
-    "solve":"0",
+[{"question":"Hauptstadt von Eritrea??",
+"answers":["Nairobi","Asmara","Gelanda","Maccra"],
+"multiplechoice":true,
+"solve":"1"},
+{"question":"Hauptstadt von Guinea??",
+"answers":["Conakry","Manama","Cüsinau","Derwani"],
+"multiplechoice":true,
+"solve":"0"},
+{
+    "question":"Was ist die Hauptstadt von Kenya?",
+    "solve":"Nairobi",
     "multiplechoice":false
   },
 {
-    "question":"What is 3?",
-    "answers":["1","2","3","4"],
-    "solve":"2",
+    "question":"Was ist die Hauptstadt von Uganda",
+    "solve":"Kampala",
     "multiplechoice":false
-}]
+},
+{
+    "question":"Was ist die Hauptstadt von Ghana",
+    "solve":"Accra",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Marokko",
+    "solve":"Rabat",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Italien",
+    "solve":"Rom",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Griechenland",
+    "solve":"Athen",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Laos",
+    "solve":"Vientiane",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Südafrika",
+    "solve":"Kapstadt",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Namibia",
+    "solve":"Windhoek",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Burkina Faso",
+    "solve":"Ouagadougou",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Sierra Leone",
+    "solve":"Freetown",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Deutschland",
+    "solve":"Berlin",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Jamaica",
+    "solve":"Kingston",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Wales",
+    "solve":"Cardiff",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Eritrea",
+    "solve":"Asmara",
+    "multiplechoice":false
+  }]
   

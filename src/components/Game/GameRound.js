@@ -5,7 +5,7 @@ import { MultipleChoiceQuestionCard, QuestionCard } from "../QuestionCards";
 import questionFile from '../../static/questions.json';
 
 const GameRound = () => {
-  const numberOfQuestionsPerRound = 10 < questionFile.length ? 10 : questionFile.length;
+  const numberOfQuestionsPerRound = questionFile.length;
   const [questions, setQuestions] = useState([]);
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
