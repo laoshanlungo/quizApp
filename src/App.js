@@ -9,6 +9,7 @@ import Highscores from "./components/Statistics/Highscores";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Login/Login";
 import useToken from "./components/hooks/useToken";
+import questions from "./static/questions.json";
 
 const App = () => {
   const { token, setToken } = useToken();
@@ -18,9 +19,9 @@ const App = () => {
     getQuestions();
   }, []);
   const getQuestions = async () => {
-    const res = await fetch("http://localhost:3001");
-    const data = await res.json();
-    setMerchants(data);
+    // const res = await fetch("http://localhost:3001");
+    // const data = await res.json();
+    setMerchants(questions);
   };
 
   const logout = async () => {
@@ -28,11 +29,12 @@ const App = () => {
   };
 
 
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
+  // if (!token) {
+  //   return <Login setToken={setToken} />;
+  // }
   return (
     <div className="wrapper">
+      {console.log(merchants, "MERCHANTS")}
             <div className="d-flex flex-row justify-content-between">
       <h1>Grundschule Fensterplatz</h1>
       <button className="button-logout" onClick={logout}>

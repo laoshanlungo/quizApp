@@ -2,6 +2,14 @@ const express = require("express");
 const app = express();
 const port = process.env.port || 3001;
 
+//TO DO: Figure out how to properly set Database user/address in case of remote hosting. 
+// TO DO: Figure out Migrations
+//TO DO: Add Prisma as Database layer (ORM)
+//TO DO: hashing / salting passwords or use library
+//TO DO: read up on uuid's and their advantages in comparison to incremental id's
+//TO DO: change api calls to /api and not localhost:3001
+
+
 const Pool = require("pg").Pool;
 const bcrypt = require("bcrypt");
 const pool = new Pool({

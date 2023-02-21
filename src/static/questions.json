@@ -1,0 +1,13 @@
+[{
+    "question":"What is 1?",
+    "answers":["1","2","3","4"],
+    "solve":"0",
+    "multiplechoice":false
+  },
+{
+    "question":"What is 3?",
+    "answers":["1","2","3","4"],
+    "solve":"2",
+    "multiplechoice":false
+}]
+  

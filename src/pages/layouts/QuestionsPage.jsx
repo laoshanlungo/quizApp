@@ -44,10 +44,7 @@ const QuestionsPage = ({ data }) => {
 
   const BuildQuestionCard = ({ data }) => {
     return data.map((dataEntry) => {
-      console.log(dataEntry, "eintrag");
       if (dataEntry.multiplechoice === false) {
-        console.log(dataEntry.multiplechoice === false, "ist es falsch?");
-        console.log("und trotzdem sind wir hier");
         return (
           <QuestionCard
             question={dataEntry.question}
@@ -154,7 +151,7 @@ const QuestionsPage = ({ data }) => {
           <div className="d-flex flex-column">
 
           <div className="h-100 col-sm align-items-center justify-content-around">
-            <QuestionList data={data} />
+            <QuestionList />
           </div>
           </div>
         </div>
