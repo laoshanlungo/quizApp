@@ -13,16 +13,16 @@ const Dashboard = () => {
             </div>
 
       <Link to="/questions">
-        <button className="button-19">Questions</button>
+        <button disabled className="button-19-disabled">Questions</button>
       </Link>
       <Link to="/play">
         <button className="button-19">Play</button>
       </Link>
       <Link to="/statistics">
-        <button className="button-19">Statistics</button>
+        <button disabled className="button-19-disabled">Statistics</button>
       </Link>
       <Link to="/highscores">
-        <button className="button-19">Highscores</button>
+        <button disabled className="button-19-disabled">Highscores</button>
       </Link>
     </div>
     </div>

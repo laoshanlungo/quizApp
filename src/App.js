@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Login from "./components/Login/Login";
 import useToken from "./components/hooks/useToken";
 import questions from "./static/questions.json";
+import { Container } from "react-bootstrap";
 
 const App = () => {
   const { token, setToken } = useToken();
@@ -34,7 +35,7 @@ const App = () => {
   //   return <Login setToken={setToken} />;
   // }
   return (
-    <div className="wrapper">
+    <Container>
             <div className="d-flex flex-row justify-content-between">
       <h1>Grundschule Fensterplatz</h1>
       <button className="button-logout" disabled={true} onClick={logout}>
@@ -62,7 +63,7 @@ const App = () => {
     </div>
     </div>
       </BrowserRouter>
-    </div>
+    </Container>
   );
 };
 

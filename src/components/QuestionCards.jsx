@@ -74,15 +74,15 @@ const MultipleChoiceQuestionCard = ({
   const AnswerField = (input, disabled) => {
     const { index } = input;
     return (
-      <div className="col-2 flex-fill answers-row">
-        <Button
+      <div className="col-2 flex-fill">
+        <button
           disabled={fieldsDisabled}
-          className="button-19 w-100 answers-row"
+          className="quiz-button w-100"
           onClick={() => handleAnswer(index)}
           variant="primary"
         >
           {answers[index]}
-        </Button>
+        </button>
       </div>
     );
   };
