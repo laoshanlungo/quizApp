@@ -10,7 +10,6 @@ const GameRound = () => {
   const [questions, setQuestions] = useState([]);
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [loading, setLoading] = useState(true);
   const userString = localStorage.getItem("token");
 
   useEffect(() => {
@@ -24,9 +23,7 @@ const GameRound = () => {
     for (let i = 0; i < numberOfQuestionsPerRound; i++) {
   randomQuestions.push(questionsFiltered[Math.floor(Math.random() * questionsFiltered.length)])
 } 
-console.log(randomQuestions, "RANDOM")
-    setQuestions(questionsFiltered);
-    setLoading(false);
+    setQuestions(randomQuestions);
   };
 
   const restartRound = () => {
@@ -62,9 +59,8 @@ console.log(randomQuestions, "RANDOM")
     }
   };
 
-  console.log(questions, "HALLO")
 
-  if (loading) {
+  if (questions.length < 1) {
     return null;
   }
   if (currentQuestion > numberOfQuestionsPerRound - 1) {

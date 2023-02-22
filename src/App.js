@@ -27,7 +27,6 @@ const App = () => {
   const getQuestions = async () => {
     // const res = await fetch("http://localhost:3001");
     // const data = await res.json();
-    console.log("yolo")
     setMerchants(questions);
   };
 
