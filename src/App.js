@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Statistics from "./components/Statistics/Statistics";
 import Preferences from "./components/Preferences/Preferences";
 import Highscores from "./components/Statistics/Highscores";
+import GameChoice from "./components/Game/GameChoice";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Login from "./components/Login/Login";
 import useToken from "./components/hooks/useToken";
@@ -42,13 +43,14 @@ const App = () => {
     <Container>
             <Row className="justify-content-between">
       <Col xs={10}><h1>Grundschule Fensterplatz</h1></Col>
-      <Col xs={2}><button className="button-logout" disabled={true} onClick={logout}>
+      <Col xs={2}><button className="button-89" disabled={false} onClick={logout}>
         Logout User
       </button></Col></Row>
       <br />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/gamechoice" element={<GameChoice />} />
           <Route path="/quizApp" element={<Dashboard />} />
           <Route path="/preferences" element={<Preferences />} />
           <Route path="/questions" element={<QuestionsPage data={merchants} />} />

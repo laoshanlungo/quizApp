@@ -15,7 +15,7 @@ const Dashboard = () => {
       </Link>
       </Row>
       <Row>
-      <Link to="/play">
+      <Link to="/gamechoice">
         <button className="menu-button">Play</button>
       </Link>
       </Row>

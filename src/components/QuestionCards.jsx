@@ -10,7 +10,7 @@ const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
   const [answer, setAnswer] = useState(null);
   const [inputDisabled, setInputDisabled] = useState(false);
   const [guess, setGuess] = useState("");
-  const [counter, setCounter] = useState(2);
+  const [counter, setCounter] = useState(1);
   const [isActive, setIsActive] = useState(true);
 
   const handleSubmit = () => {
@@ -49,6 +49,7 @@ const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
               {inputDisabled && answer}
               {inputDisabled && (
                 <CountdownCircleTimer
+                size={50}
                   onComplete={() => {
                     setIsActive(false);
                     updateGame(
@@ -128,7 +129,7 @@ const MultipleChoiceQuestionCard = ({
         <Row className="justify-content-center align-items-center">
           <Col md="auto">
             <CountdownCircleTimer
-            size={100}
+            size={50}
               onComplete={() => {
                 setIsActive(false);
                 setFieldsDisabled(false);

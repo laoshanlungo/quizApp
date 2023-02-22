@@ -9,31 +9,37 @@
 {
     "question":"Was ist die Hauptstadt von Kenya?",
     "solve":"Nairobi",
+    "category":"capitals",
     "multiplechoice":false
   },
 {
     "question":"Was ist die Hauptstadt von Uganda",
     "solve":"Kampala",
+    "category":"capitals",
     "multiplechoice":false
 },
 {
     "question":"Was ist die Hauptstadt von Ghana",
     "solve":"Accra",
+    "category":"capitals",
     "multiplechoice":false
   },
   {
     "question":"Was ist die Hauptstadt von Marokko",
     "solve":"Rabat",
+    "category":"capitals",
     "multiplechoice":false
   },
   {
     "question":"Was ist die Hauptstadt von Italien",
     "solve":"Rom",
+    "category":"capitals",
     "multiplechoice":false
   },
   {
     "question":"Was ist die Hauptstadt von Griechenland",
     "solve":"Athen",
+    "category":"capitals",
     "multiplechoice":false
   },
   {
@@ -44,41 +50,446 @@
   {
     "question":"Was ist die Hauptstadt von Südafrika",
     "solve":"Kapstadt",
+    "category":"capitals",
     "multiplechoice":false
   },
   {
     "question":"Was ist die Hauptstadt von Namibia",
     "solve":"Windhoek",
-    "multiplechoice":false
-  },
-  {
-    "question":"Was ist die Hauptstadt von Burkina Faso",
-    "solve":"Ouagadougou",
+    "category":"capitals",
     "multiplechoice":false
   },
   {
     "question":"Was ist die Hauptstadt von Sierra Leone",
     "solve":"Freetown",
+    "category":"capitals",
     "multiplechoice":false
   },
   {
     "question":"Was ist die Hauptstadt von Deutschland",
     "solve":"Berlin",
+    "category":"capitals",
     "multiplechoice":false
   },
   {
     "question":"Was ist die Hauptstadt von Jamaica",
     "solve":"Kingston",
+    "category":"capitals",
     "multiplechoice":false
   },
   {
     "question":"Was ist die Hauptstadt von Wales",
     "solve":"Cardiff",
+    "category":"capitals",
     "multiplechoice":false
   },
   {
     "question":"Was ist die Hauptstadt von Eritrea",
     "solve":"Asmara",
+    "category":"capitals",
     "multiplechoice":false
-  }]
+  },
+  {
+    "question":"Was ist die Hauptstadt von Afghanistan",
+    "solve":"Kabul",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Albanien",
+    "solve":"Tirana",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Algerien",
+    "solve":"Algier",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Andorra",
+    "solve":"Andorra la Vella",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Antigua und Barbuda",
+    "solve":"St Johns",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Äquatorialguinea",
+    "solve":"Malabo",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Argentinien",
+    "solve":"Buenos Aires",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Armenien",
+    "solve":"Jerewan",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Aserbaidschan",
+    "solve":"Baku",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Äthiopien",
+    "solve":"Addis Abeba",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Australien",
+    "solve":"Canberra",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Bahamas",
+    "solve":"Nassau",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Bahrain",
+    "solve":"Manama",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Bangladesch",
+    "solve":"Dhaka",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Barbados",
+    "solve":"Bridgetown",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Belarus",
+    "solve":"Minsk",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Belgien",
+    "solve":"Brüssel",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Belize",
+    "solve":"Belmopan",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Benin",
+    "solve":"Porto Novo",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Bhutan",
+    "solve":"Thimphu",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Bolivien",
+    "solve":"Sucre",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Bosnien und Herzegowina",
+    "solve":"Sarajevo",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Botswana",
+    "solve":"Gaborone",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Brasilien",
+    "solve":"Brasilia",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Brunei",
+    "solve":"Bandar Seri Begawan",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Bulgarien",
+    "solve":"Sofia",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Burkina Faso",
+    "solve":"Ouagadougou",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Burundi",
+    "solve":"Gitega",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Chile",
+    "solve":"Santiago",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von China",
+    "solve":"Peking",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Costa Rica",
+    "solve":"San Jose",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Dänemark",
+    "solve":"Kopenhagen",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Was ist die Hauptstadt von Dominica",
+    "solve":"Roseau",
+    "category":"capitals",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Acer unmgangssprachlich?",
+    "solve":"Ahorn",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Acacia unmgangssprachlich?",
+    "solve":"Akazie",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Abies unmgangssprachlich?",
+    "solve":"Tanne",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Achillea unmgangssprachlich?",
+    "solve":"Schafgarbe",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Actinida chinensis unmgangssprachlich?",
+    "solve":"Kiwi",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Agaricus arvensis unmgangssprachlich?",
+    "solve":"Champignon",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Allium Cepa unmgangssprachlich?",
+    "solve":"Zwiebel",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Allium Sativum unmgangssprachlich?",
+    "solve":"Knoblauch",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Ananas Comosus unmgangssprachlich?",
+    "solve":"Ananas",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Anethum graveolens unmgangssprachlich?",
+    "solve":"Dill",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Armoracia rusticana unmgangssprachlich?",
+    "solve":"Meerrettich",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Asparagus officinalis unmgangssprachlich?",
+    "solve":"Spargel",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Beta vulgaris unmgangssprachlich?",
+    "solve":"Rote Beete",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Bellis unmgangssprachlich?",
+    "solve":"Gänseblümchen",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Sinapis alba unmgangssprachlich?",
+    "solve":"Senf",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Papaver unmgangssprachlich?",
+    "solve":"Mohn",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Pastinaca sativa unmgangssprachlich?",
+    "solve":"Pastinake",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Phaseolus vulgaris unmgangssprachlich?",
+    "solve":"Bohnen",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Pimpinella anisum unmgangssprachlich?",
+    "solve":"Anis",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie nennt man die Pflanze mit dem botanischen Namen Piper nigrum unmgangssprachlich?",
+    "solve":"Pfeffer",
+    "category":"plants",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wann wurde der R8 Revolver Released?",
+    "solve":"2015",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wie hieß das Update mit dem 2013 Skins released wurden?",
+    "solve":"The Arms Deals",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Welches ist das teuerste Case?",
+    "solve":"Weapon Case 1",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wieviel kosten Dual Berettas?",
+    "solve":"400",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wieviele Einheiten pro Sekunde kann man mit USP-S in der Hand laufen?",
+    "solve":"240",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"In welchem Jahr wurde Global Offensive released?",
+    "solve":"2012",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wieviele Runden braucht man um eine kompetitive Runde zu gewinnen?",
+    "solve":"16",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wieviel kostet ein Molotov?",
+    "solve":"400",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Welche Waffen hat den höchsten One-Bullet Schaden?",
+    "solve":"AWP",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Welche Waffe hat den zweithöchsten One-Bullet Schaden?",
+    "solve":"Scout",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wieviel kostet die M249?",
+    "solve":"5200",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Wieviel kostet die Sawed-off Schrotflinte?",
+    "solve":"1200",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Welche Waffe hat das größte Magazin?",
+    "solve":"Negev",
+    "category":"csgo",
+    "multiplechoice":false
+  },
+  {
+    "question":"Welche Schrotflinte schießt die meisten Kugeln?",
+    "solve":"Nova",
+    "category":"csgo",
+    "multiplechoice":false
+  }
+]
   

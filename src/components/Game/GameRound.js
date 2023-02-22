@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Navigate, Link } from "react-router-dom";
+import { Navigate, Link, useLocation } from "react-router-dom";
 import mauritius from "../../static/mauritius.png";
 import { MultipleChoiceQuestionCard, QuestionCard } from "../QuestionCards";
 import questionFile from '../../static/questions.json';
 
 const GameRound = () => {
-  const numberOfQuestionsPerRound = questionFile.length;
+  let { hash } = useLocation();
+  const numberOfQuestionsPerRound = questionFile.filter(question => question.category === hash.slice(1)).length < 10 ? questionFile.filter(question => question.category === hash.slice(1)).length : 10;
   const [questions, setQuestions] = useState([]);
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -16,8 +17,15 @@ const GameRound = () => {
     getQuestions();
   }, []);
 
+
   const getQuestions = async () => {
-    setQuestions(questionFile);
+    let questionsFiltered = questionFile.filter(question => question.category === hash.slice(1))
+    let randomQuestions = [];
+    for (let i = 0; i < numberOfQuestionsPerRound; i++) {
+  randomQuestions.push(questionsFiltered[Math.floor(Math.random() * questionsFiltered.length)])
+} 
+console.log(randomQuestions, "RANDOM")
+    setQuestions(questionsFiltered);
     setLoading(false);
   };
 
