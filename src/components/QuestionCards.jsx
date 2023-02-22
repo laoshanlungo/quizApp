@@ -3,21 +3,25 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import "../styles.css";
+import {CountdownCircleTimer} from "react-countdown-circle-timer";
 
 const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
   const [answer, setAnswer] = useState(null);
   const [inputDisabled, setInputDisabled] = useState(false);
   const [guess, setGuess] = useState('');
+  const [counter, setCounter] = useState(3);
+  const [isActive, setIsActive] = useState(true);
+
+
 
   const handleSubmit = () => {
     let isCorrectAnswer = (guess.toLowerCase()).localeCompare(solve.toLowerCase()) === 0;
-    setAnswer(isCorrectAnswer ? 'RICHTIG!!!!' : 'DAS WAR SO FALSCH DU EUMEL')
+    setAnswer(isCorrectAnswer ? 'RICHTIG!!!!' : 'LEIDER FALSCH')
     setInputDisabled(true);
-    setTimeout(() => {
-      updateGame(isCorrectAnswer);
-      setInputDisabled(false);
-      setGuess('')
-    }, 500);
+    setIsActive(true)
+    // setTimeout(() => {
+
+    // }, 2000);
   }
 
   return (
@@ -43,6 +47,19 @@ const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
               />
                       <Button type="submit" onClick={handleSubmit}>Abschicken</Button>
                       {inputDisabled && answer}
+                      {inputDisabled &&         <CountdownCircleTimer
+          onComplete={() => {
+            setIsActive(false);
+            updateGame((guess.toLowerCase()).localeCompare(solve.toLowerCase()) === 0);
+            setInputDisabled(false);
+            setGuess('')
+          }}
+          isPlaying
+          duration={counter}
+          colors="#E5007B"
+        >
+          <h1>{counter}</h1>
+        </CountdownCircleTimer>}
             </Form.Group>{" "}
           </Card.Body>
         </Card>
@@ -61,14 +78,12 @@ const MultipleChoiceQuestionCard = ({
 }) => {
   const [answer, setAnswer] = useState(null);
   const [fieldsDisabled, setFieldsDisabled] = useState(false);
+  const [counter, setCounter] = useState(3);
+  const [isActive, setIsActive] = useState(true);
 
   const handleAnswer = (index) => {
     setAnswer(index === solve ? "Correct!" : "Nope, try again");
     setFieldsDisabled(true);
-    setTimeout(() => {
-      updateGame(index === solve);
-      setFieldsDisabled(false);
-    }, 500);
   };
 
   const AnswerField = (input, disabled) => {
@@ -105,11 +120,20 @@ const MultipleChoiceQuestionCard = ({
         <AnswerField index="3" disabled={fieldsDisabled} />
       </div>
       <div className="h-1 d-flex flex-row">
-        <Card className="align-items-center" style={{ width: "36rem" }}>
-          <Card.Body>
-            <h5 className="card-title">{answer}</h5>
-          </Card.Body>
-        </Card>
+        {fieldsDisabled &&
+        <CountdownCircleTimer
+        onComplete={() => {
+          setIsActive(false);
+          setFieldsDisabled(false);
+          updateGame(answer === "Correct!");
+        }}
+        isPlaying
+        duration={counter}
+        colors="#E5007B"
+      >
+        <h1>{counter}</h1>
+      </CountdownCircleTimer>}
+      {answer}
       </div>
     </div>
   );

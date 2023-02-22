@@ -10,7 +10,11 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Login from "./components/Login/Login";
 import useToken from "./components/hooks/useToken";
 import questions from "./static/questions.json";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+
+
+//TO DO Update Grid COMPLETELY with react-bootstrap
+
 
 const App = () => {
   const { token, setToken } = useToken();
@@ -36,11 +40,11 @@ const App = () => {
   // }
   return (
     <Container>
-            <div className="d-flex flex-row justify-content-between">
-      <h1>Grundschule Fensterplatz</h1>
-      <button className="button-logout" disabled={true} onClick={logout}>
+            <Row className="justify-content-between">
+      <Col xs={10}><h1>Grundschule Fensterplatz</h1></Col>
+      <Col xs={2}><button className="button-logout" disabled={true} onClick={logout}>
         Logout User
-      </button></div>
+      </button></Col></Row>
       <br />
       <BrowserRouter>
         <Routes>
