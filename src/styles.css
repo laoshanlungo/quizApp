@@ -176,6 +176,42 @@
 
 .quiz-button:hover {background-color: #060560}
 
+.menu-button {
+  --fill-color: #198CE6;
+  position: relative;
+  display: block;
+  padding: 4px 0;
+  font: 700 3rem Raleway, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px var(--fill-color);
+  background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
+  color: transparent;
+  background-clip: text;
+  transition: 0.5s linear;
+}
+  .menu-button:hover {
+    background-size: 100%;
+  }
+
+  .menu-button-disabled {
+    --fill-color: #252729;
+    position: relative;
+    display: block;
+    padding: 4px 0;
+    font: 700 3rem Raleway, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px var(--fill-color);
+    background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
+    color: transparent;
+    background-clip: text;
+    transition: 0.5s linear;
+  }
+    .menu-button-disabled:hover {
+      background-size: 100%;
+    }
+  
 /* .quiz-button:active {
   background-color: #bfd962;
   box-shadow: 0 5px #666;
