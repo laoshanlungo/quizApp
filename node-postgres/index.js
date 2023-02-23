@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.port || 3001;
 
+console.log(process.env.DB_URL, "DBURL")
 //TO DO: Figure out how to properly set Database user/address in case of remote hosting. 
 // TO DO: Figure out Migrations
 //TO DO: Add Prisma as Database layer (ORM)
@@ -10,15 +11,9 @@ const port = process.env.port || 3001;
 //TO DO: change api calls to /api and not localhost:3001
 
 
-const Pool = require("pg").Pool;
+
 const bcrypt = require("bcrypt");
-const pool = new Pool({
-  user: "my_user",
-  host: "localhost",
-  database: "davidmichel",
-  password: "root",
-  port: 5432,
-});
+
 
 
 const login_model = require("./login_model");

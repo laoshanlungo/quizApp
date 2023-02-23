@@ -1,11 +1,5 @@
-const Pool = require("pg").Pool;
-const pool = new Pool({
-  user: "my_user",
-  host: "localhost",
-  database: "davidmichel",
-  password: "root",
-  port: 5432,
-});
+const pool = require('./database')
+
 
 const getLogin = async (credentials, res) => {
   const { email, password } = credentials;

@@ -21,7 +21,9 @@ const GameRound = () => {
     let questionsFiltered = questionFile.filter(question => question.category === hash.slice(1))
     let randomQuestions = [];
     for (let i = 0; i < numberOfQuestionsPerRound; i++) {
-  randomQuestions.push(questionsFiltered[Math.floor(Math.random() * questionsFiltered.length)])
+        randomQuestions.push(questionsFiltered[Math.floor(Math.random() * questionsFiltered.length)])
+      
+
 } 
     setQuestions(randomQuestions);
   };

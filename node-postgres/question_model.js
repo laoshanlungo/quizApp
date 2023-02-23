@@ -1,11 +1,5 @@
-const Pool = require('pg').Pool
-const pool = new Pool({
-  user: 'my_user',
-  host: 'localhost',
-  database: 'davidmichel',
-  password: 'root',
-  port: 5432,
-});
+const pool = require('./database')
+
 
 const getQuestions = () => {
     return new Promise(function(resolve, reject) {

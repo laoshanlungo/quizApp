@@ -1,12 +1,5 @@
-const Pool = require("pg").Pool;
-const bcrypt = require("bcrypt");
-const pool = new Pool({
-  user: "my_user",
-  host: "localhost",
-  database: "davidmichel",
-  password: "root",
-  port: 5432,
-});
+const pool = require('./database')
+
 
 const getStatistics = async (input, res) => {
   const { updatedUserString } = input;

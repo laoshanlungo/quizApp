@@ -1,0 +1,11 @@
+version: "3"
+services:
+  postgres:
+    container_name: quizapp-postgres
+    image: quizapp:local
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'    
+    ports:
+      - 3001:3001
+    env_file:
+      - .env

@@ -25,9 +25,9 @@ const App = () => {
     getQuestions();
   }, []);
   const getQuestions = async () => {
-    // const res = await fetch("http://localhost:3001");
-    // const data = await res.json();
-    setMerchants(questions);
+    const res = await fetch("http://localhost:3001");
+    const data = await res.json();
+    setMerchants(data);
   };
 
   const logout = async () => {
@@ -46,6 +46,7 @@ const App = () => {
         Logout User
       </button></Col></Row>
       <br />
+      {console.log(merchants, "?")}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard />} />
