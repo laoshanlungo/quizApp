@@ -1,5 +1,11 @@
 .App {
-  background-color: white;
+  background-color: #567189;
+}
+
+.background{
+  background: rgb(123,143,161);
+background: linear-gradient(0deg, rgba(123,143,161,1) 0%, rgba(86,113,137,1) 100%);
+color: #CFB997;
 }
 
 .Auth-form-container {

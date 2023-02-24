@@ -39,14 +39,13 @@ const App = () => {
   //   return <Login setToken={setToken} />;
   // }
   return (
-    <Container>
-            <Row className="justify-content-between">
-      <Col xs={10}><h1>Grundschule Fensterplatz</h1></Col>
+    <Container fluid className="vh-100 background">
+            <Row className="justify-content-between pt-3">
+      <Col xs={10}><h1>QuizApp@v0.01</h1></Col>
       <Col xs={2}><button className="button-89" disabled={false} onClick={logout}>
         Logout User
       </button></Col></Row>
-      <br />
-      {console.log(merchants, "?")}
+      <Row className="h-100 align-items-center pb-5">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard />} />
@@ -59,6 +58,7 @@ const App = () => {
           <Route path="/highscores" element={<Highscores />} />
         </Routes>
       </BrowserRouter>
+      </Row>
     </Container>
   );
 };
