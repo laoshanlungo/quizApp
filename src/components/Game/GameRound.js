@@ -92,7 +92,7 @@ const GameRound = () => {
       <Stack gap={3} className="justify-content-center align-items-center">
       <div className="card-shadow shadow">
       <div>
-      <h2 className="text-center">Question {currentQuestion+1} / {numberOfQuestionsPerRound}</h2>
+      <h4 className="text-center">Question {currentQuestion+1} / {numberOfQuestionsPerRound}</h4>
       </div>
       <br />
       <br />

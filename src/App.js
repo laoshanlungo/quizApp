@@ -15,6 +15,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 
 //TO DO Update Grid COMPLETELY with react-bootstrap
+//TO DO Add in Websockets to make usage more dynamic (especially for multiplayer)
 
 
 const App = () => {

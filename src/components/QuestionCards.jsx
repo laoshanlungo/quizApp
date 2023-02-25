@@ -10,7 +10,7 @@ const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
   const [answer, setAnswer] = useState(null);
   const [inputDisabled, setInputDisabled] = useState(false);
   const [guess, setGuess] = useState("");
-  const [counter, setCounter] = useState(1);
+  const [counter, setCounter] = useState(200);
   const [isActive, setIsActive] = useState(true);
 
   const handleSubmit = () => {
@@ -29,7 +29,7 @@ const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
     <Col>
       <Row>
         <div className="question-headline">
-            <h5 className="card-title text-center">{question}</h5>
+            <h2 className="card-title text-center">{question}</h2>
             </div>
       </Row>
       <div className="h-1 d-flex flex-row flex-fill justify-content-center">
@@ -44,7 +44,8 @@ const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
               <Button type="submit" onClick={handleSubmit}>
                 Abschicken
               </Button>
-              {inputDisabled && answer}
+              <Row className="justify-content-center">
+              {inputDisabled && <h3 style={{color: '#1b232a'}}>{answer}</h3>}
               {inputDisabled && (
                 <CountdownCircleTimer
                 size={50}
@@ -64,6 +65,7 @@ const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
                   <h1>{counter}</h1>
                 </CountdownCircleTimer>
               )}
+              </Row>
             </Form.Group>{" "}
 </div>
       </div>
