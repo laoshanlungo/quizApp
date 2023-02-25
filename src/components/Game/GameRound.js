@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navigate, Link, useLocation } from "react-router-dom";
 import mauritius from "../../static/mauritius.png";
+import {Col, Row, Stack} from 'react-bootstrap';
 import { MultipleChoiceQuestionCard, QuestionCard } from "../QuestionCards";
 import questionFile from '../../static/questions.json';
 
@@ -82,13 +83,14 @@ const GameRound = () => {
     );
   }
   return (
-    <div>
-      <div className="d-flex flex-row justify-content-start">
+    <Row>
+            <div className="d-flex flex-row justify-content-start">
         <Link to="/">
           <button className="button-back">Back</button>
         </Link>
-        <h1 className="text-center offset-md-3">Quiz Round of 10 Questions</h1>
       </div>
+      <Stack gap={3} className="justify-content-center align-items-center">
+      <div className="card-shadow shadow">
       <div>
       <h2 className="text-center">Question {currentQuestion+1} / {numberOfQuestionsPerRound}</h2>
       </div>
@@ -115,6 +117,9 @@ const GameRound = () => {
         />
       )}
     </div>
+      </Stack>
+    </Row>
+
   );
 };
 

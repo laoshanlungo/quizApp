@@ -25,17 +25,15 @@ const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
   };
 
   return (
-    <div className="h-50 d-flex flex-column">
-      <div className="mh-33 d-flex flex-row flex-fill justify-content-center">
-        <Card className="flex-fill">
-          <Card.Body>
+
+    <Col>
+      <Row>
+        <div className="question-headline">
             <h5 className="card-title text-center">{question}</h5>
-          </Card.Body>
-        </Card>
-      </div>
+            </div>
+      </Row>
       <div className="h-1 d-flex flex-row flex-fill justify-content-center">
-        <Card className="align-items-center" style={{ width: "36rem" }}>
-          <Card.Body>
+<div className="question-body">
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Antwort</Form.Label>
               <Form.Control
@@ -67,10 +65,9 @@ const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
                 </CountdownCircleTimer>
               )}
             </Form.Group>{" "}
-          </Card.Body>
-        </Card>
+</div>
       </div>
-    </div>
+    </Col>
   );
 };
 

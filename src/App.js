@@ -41,7 +41,7 @@ const App = () => {
   return (
     <Container fluid className="vh-100 background">
             <Row className="justify-content-between pt-3">
-      <Col xs={10}><h1>QuizApp@v0.01</h1></Col>
+      <Col xs={10}><h5>QuizApp@v0.01</h5></Col>
       <Col xs={2}><button className="button-89" disabled={false} onClick={logout}>
         Logout User
       </button></Col></Row>
