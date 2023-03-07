@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import mauritius from "../../static/mauritius.png";
-import { QuestionCard } from "../../components/QuestionCards";
-import { MultipleChoiceQuestionCard } from "../../components/QuestionCards";
+import { QuestionCard } from "../../components/QuestionBody";
+import { MultipleChoiceQuestionCard } from "../../components/QuestionBody";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";

@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Navigate, Link, useLocation } from "react-router-dom";
 import mauritius from "../../static/mauritius.png";
-import {Col, Row, Stack} from 'react-bootstrap';
-import { MultipleChoiceQuestionCard, QuestionCard } from "../QuestionCards";
-import questionFile from '../../static/questions.json';
+import { Col, Row, Stack, ProgressBar } from "react-bootstrap";
+import { MultipleChoiceQuestionCard, QuestionCard } from "../QuestionBody";
+import questionFile from "../../static/questions.json";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 const GameRound = () => {
   let { hash } = useLocation();
-  const numberOfQuestionsPerRound = questionFile.filter(question => question.category === hash.slice(1)).length < 10 ? questionFile.filter(question => question.category === hash.slice(1)).length : 10;
+  const numberOfQuestionsPerRound =
+    questionFile.filter((question) => question.category === hash.slice(1))
+      .length < 10
+      ? questionFile.filter((question) => question.category === hash.slice(1))
+          .length
+      : 10;
   const [questions, setQuestions] = useState([]);
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -17,15 +24,18 @@ const GameRound = () => {
     getQuestions();
   }, []);
 
+  let percentage = (currentQuestion / numberOfQuestionsPerRound) * 100;
 
   const getQuestions = async () => {
-    let questionsFiltered = questionFile.filter(question => question.category === hash.slice(1))
+    let questionsFiltered = questionFile.filter(
+      (question) => question.category === hash.slice(1)
+    );
     let randomQuestions = [];
     for (let i = 0; i < numberOfQuestionsPerRound; i++) {
-        randomQuestions.push(questionsFiltered[Math.floor(Math.random() * questionsFiltered.length)])
-      
-
-} 
+      let random = Math.floor(Math.random() * questionsFiltered.length);
+      randomQuestions.push(questionsFiltered[random]);
+      questionsFiltered.splice(random, 1);
+    }
     setQuestions(randomQuestions);
   };
 
@@ -62,7 +72,6 @@ const GameRound = () => {
     }
   };
 
-
   if (questions.length < 1) {
     return null;
   }
@@ -84,42 +93,58 @@ const GameRound = () => {
   }
   return (
     <Row>
-            <div className="d-flex flex-row justify-content-start">
-        <Link to="/">
-          <button className="button-back">Back</button>
-        </Link>
-      </div>
+      <div className="d-flex flex-row justify-content-start"></div>
       <Stack gap={3} className="justify-content-center align-items-center">
-      <div className="card-shadow shadow">
-      <div>
-      <h4 className="text-center">Question {currentQuestion+1} / {numberOfQuestionsPerRound}</h4>
-      </div>
-      <br />
-      <br />
-      <br />
-      {questions[currentQuestion].multiplechoice === true ? (
-        <MultipleChoiceQuestionCard
-          question={questions[currentQuestion].question}
-          answers={questions[currentQuestion].answers}
-          solve={questions[currentQuestion].solve}
-          picture={mauritius}
-          updateGame={updateGame}
-          score={score}
-        />
-      ) : (
-        <QuestionCard
-          question={questions[currentQuestion].question}
-          solve={questions[currentQuestion].solve}
-          multiplechoice={questions[currentQuestion].multiplechoice}
-          picture={mauritius}
-          updateGame={updateGame}
-          score={score}
-        />
-      )}
-    </div>
+        <div className="card-shadow shadow question-card">
+          <Col className="question-card-header justify-content-center">
+            <Row className="justify-content-center">
+              <div style={{ width: 150, height: 150 }}>
+                <CircularProgressbar
+                  value={percentage}
+                  text={`${currentQuestion + 1}/${numberOfQuestionsPerRound}`}
+                  styles={buildStyles({
+                    textSize: "36px",
+                  })}
+                />
+              </div>
+            </Row>
+            <Row>
+              <div className="question-headline">
+                <h2 className="card-title text-center">
+                  {questions[currentQuestion].question}?
+                </h2>
+              </div>
+            </Row>
+          </Col>
+          <Col className="question-card-body">
+            {questions[currentQuestion].multiplechoice === true ? (
+              <MultipleChoiceQuestionCard
+                question={questions[currentQuestion].question}
+                answers={questions[currentQuestion].answers}
+                solve={questions[currentQuestion].solve}
+                picture={mauritius}
+                updateGame={updateGame}
+                score={score}
+              />
+            ) : (
+              <QuestionCard
+                question={questions[currentQuestion].question}
+                solve={questions[currentQuestion].solve}
+                multiplechoice={questions[currentQuestion].multiplechoice}
+                picture={mauritius}
+                updateGame={updateGame}
+                score={score}
+              />
+            )}
+          </Col>
+          <ProgressBar
+            animated
+            variant="success"
+            now={(currentQuestion / numberOfQuestionsPerRound) * 100}
+          />
+        </div>
       </Stack>
     </Row>
-
   );
 };
 
