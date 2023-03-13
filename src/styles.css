@@ -155,4 +155,9 @@ footer {
   box-shadow: none;
   transform: translateY(0);
 }
+
+.centered{
+  vertical-align: center;
+  text-align: center;
+}
  

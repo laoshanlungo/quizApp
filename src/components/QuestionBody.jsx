@@ -5,12 +5,13 @@ import { Row, Col } from "react-bootstrap";
 import { useState } from "react";
 import "../styles.css";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import AnswerFields from "./Game/MultipleChoiceAnswers";
 
 const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
   const [answer, setAnswer] = useState(null);
   const [inputDisabled, setInputDisabled] = useState(false);
   const [guess, setGuess] = useState("");
-  const [counter, setCounter] = useState(3);
+  const countDownDuration = 100;
   const [isActive, setIsActive] = useState(true);
 
   const handleSubmit = () => {
@@ -41,10 +42,15 @@ const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
             Abschicken
           </button>
           </Row>
-          <Row className="justify-content-center">
-            {inputDisabled && <h3 style={{ color: "#1b232a" }}>{answer}</h3>}
-            {inputDisabled && (
-              <CountdownCircleTimer
+          {inputDisabled &&
+          <Row className="justify-content-center text-right">
+            <Col className="text-end">
+          <h3 className="text-end" style={{ color: "#1b232a" }}>{answer}</h3>
+          </Col>
+          <Col>
+          <div className="justify-content-center">
+                        <CountdownCircleTimer 
+                        className="centered"
                 size={50}
                 onComplete={() => {
                   setIsActive(false);
@@ -55,13 +61,13 @@ const QuestionCard = ({ question, solve, picture, updateGame, score }) => {
                   setGuess("");
                 }}
                 isPlaying
-                duration={counter}
+                duration={countDownDuration}
                 colors="#808080"
-              >
-                <h1>{counter}</h1>
-              </CountdownCircleTimer>
-            )}
+              />
+              </div>
+              </Col>
           </Row>
+}
         </Form.Group>{" "}
       </Col>
     </Row>
@@ -78,7 +84,7 @@ const MultipleChoiceQuestionCard = ({
 }) => {
   const [answer, setAnswer] = useState(null);
   const [fieldsDisabled, setFieldsDisabled] = useState(false);
-  const [counter, setCounter] = useState(100);
+  const countDownDuration = 3;
   const [isActive, setIsActive] = useState(true);
 
   const handleAnswer = (index) => {
@@ -86,32 +92,19 @@ const MultipleChoiceQuestionCard = ({
     setFieldsDisabled(true);
   };
 
-  const AnswerField = (input, disabled) => {
-    const { index } = input;
-    return (
-      <div className="col-2 flex-fill">
-        <button
-          disabled={fieldsDisabled}
-          className="quiz-button w-100"
-          onClick={() => handleAnswer(index)}
-          variant="primary"
-        >
-          {answers[index]}
-        </button>
-      </div>
-    );
-  };
-
   return (
     <div className="h-50 d-flex flex-column">
       <div className="mh-33 d-flex flex-row flex-fill justify-content-center">
-        <AnswerField index="0" disabled={fieldsDisabled} />
+        <AnswerFields answers={answers} fieldsDisabled={fieldsDisabled} handleAnswer={handleAnswer} />
+
+        {/* <AnswerField index="0" answers={answers} index={i} />
         <AnswerField index="1" disabled={fieldsDisabled} />
       </div>
       <div className="h-33 d-flex flex-row flex-fill justify-content-center answers-row">
         <AnswerField index="2" disabled={fieldsDisabled} />
         <AnswerField index="3" disabled={fieldsDisabled} />
-      </div>
+        */}
+      </div> 
       {fieldsDisabled && (
         <Row className="justify-content-center align-items-center">
           <Col md="auto">
@@ -123,11 +116,9 @@ const MultipleChoiceQuestionCard = ({
                 updateGame(answer === "Correct!");
               }}
               isPlaying
-              duration={counter}
+              duration={countDownDuration}
               colors="#808080"
-            >
-              <h1>{counter}</h1>
-            </CountdownCircleTimer>
+            />
           </Col>
           <Col md="auto">
             <h1>{answer}</h1>
